@@ -4,15 +4,15 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#f7f7f2" />
-    <title>音频播放</title>
+    <title>{{TITLE}}</title>
     <link rel="preload" href="audio.mp3" as="audio" type="audio/mpeg" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../../style.css" />
   </head>
   <body>
     <main>
-      <section class="player" aria-labelledby="title" data-duration="03:07">
-        <p class="label">NFC AUDIO</p>
-        <h1 id="title">触碰播放</h1>
+      <section class="player" aria-labelledby="title" data-duration="{{DURATION}}">
+        <p class="label">NFC AUDIO · {{SLUG}}</p>
+        <h1 id="title">{{TITLE}}</h1>
         <p class="description">轻触下方按钮开始播放音频</p>
         <div class="artwork" aria-hidden="true">
           <img src="waveform.png" alt="" />
@@ -25,9 +25,9 @@
           <source src="audio.mp3" type="audio/mpeg" />
           你的浏览器不支持音频播放。
         </audio>
-        <p class="status" id="status" role="status">准备就绪 · 03:07</p>
+        <p class="status" id="status" role="status">准备就绪 · {{DURATION}}</p>
       </section>
     </main>
-    <script src="player.js"></script>
+    <script src="../../player.js"></script>
   </body>
 </html>

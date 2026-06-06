@@ -1,7 +1,9 @@
 const audio = document.querySelector("#audio");
+const player = document.querySelector(".player");
 const playButton = document.querySelector("#playButton");
 const buttonText = document.querySelector("#buttonText");
 const status = document.querySelector("#status");
+const duration = player.dataset.duration;
 
 function setPlaying(isPlaying) {
   playButton.dataset.playing = String(isPlaying);
@@ -38,5 +40,5 @@ audio.addEventListener("error", () => {
 });
 
 audio.play().catch(() => {
-  status.textContent = "轻触播放按钮开始";
+  status.textContent = `轻触播放按钮开始 · ${duration}`;
 });
