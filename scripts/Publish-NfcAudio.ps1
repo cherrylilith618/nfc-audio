@@ -1,12 +1,13 @@
 [CmdletBinding()]
 param(
-    [string]$Inbox = (Join-Path $PSScriptRoot '..\inbox'),
+    [string]$Inbox,
     [string]$BaseUrl = 'https://cherrylilith618.github.io/nfc-audio',
     [switch]$NoPush
 )
 
 $ErrorActionPreference = 'Stop'
 $repo = [System.IO.Path]::GetFullPath((Join-Path $PSScriptRoot '..'))
+$Inbox = if ($Inbox) { $Inbox } else { Join-Path $repo 'inbox' }
 $inboxPath = [System.IO.Path]::GetFullPath($Inbox)
 $templatePath = Join-Path $repo 'templates\track.html'
 $tracksPath = Join-Path $repo 'tracks'
